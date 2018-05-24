@@ -1,4 +1,4 @@
-# Code Like the Go Team
+# Code organization in Go projects
 
 ---
 ## Presentation
@@ -7,15 +7,6 @@
 - original slides https://talks.bjk.fyi/bketelsen/gcru18-best#/
 
 --- 
-
-#### Write Code Like the Go Team
-
-- how to organize your code into packages, and what those packages should contain  
-- code patterns and conventions that are prevalent in the standard library  
-- how to write your code to be more clear and understandable  
-- unwritten Go conventions that go beyond “go fmt” and make you look like a veteran Go contributor wrote it
-
----
 
 #### Outline
 
@@ -110,7 +101,7 @@ When writing an application your goal should be to write code that is easy to un
 
 #### Package Organization - Applications
 
-Most libraries focus on providing a singularly scoped function; logging, encoding, network access.
+Most libraries focus on providing a singularly scoped function; logging, encoding, network access, database storage.
 
 Your application will tie all of those libraries together to create a tool or service.  That tool or service will be much larger in scope.  
 
@@ -130,8 +121,6 @@ When you're building an application, you should organize your code into packages
 *Domain Types* are types that model your business functionality and objects. 
 
 *Services* are packages that operate on or with the domain types.
-
-https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1
 
 ---
 
@@ -155,13 +144,13 @@ The package containing your domain types should also define the interfaces betwe
 
 #### Package Organization - Applications
 
-Your domain type package should be the root of your application repository.  This makes it clear to anyone opening the codebase what types are being used, and what operations will be performed on those types.
+Your domain type package should be the root of your Go packages directory.  This makes it clear to anyone opening the codebase what is project about, what types are being used, and what operations will be performed on those types.
 
 ---
 
 #### Package Organization - Applications
 
-The domain type package, or *root* package of your application should not have any external dependencies.  
+The *domain* package, or *root* package of your application should not have any external dependencies.  
 > It exists for the sole purpose of describing your types and their behaviors.
 
 ---
@@ -177,7 +166,8 @@ The implementations of your domain interfaces should be in separate packages, or
 Dependencies include:
 
 - External data sources
-- Transport logic (http, RPC)
+- API / transport layer (http, REST API, RPC)
+- data access layer
 
 You should have one package per dependency.
 
