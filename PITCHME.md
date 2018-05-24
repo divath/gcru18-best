@@ -1,25 +1,12 @@
 # Code Like the Go Team
 
 ---
-## About Me
+## Presentation
 
-- Microsoft Azure - Cloud Developer Advocate
-- Twitter: @ashleymcnamara
-- Github: ashleymcnamara
-- GOPHERS!: https://github.com/ashleymcnamara/gophers
+- based on Ashley McNamara's "Go best practices" talk
+- original slides https://talks.bjk.fyi/bketelsen/gcru18-best#/
 
 --- 
-
-## This Talk
-
-[https://cda.ms/jP](https://cda.ms/jP)
-
-
----?image=assets/image/brian.jpeg&opacity=100%
-
-@title[My Hero]
-
----
 
 #### Write Code Like the Go Team
 
