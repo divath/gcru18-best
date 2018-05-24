@@ -165,9 +165,9 @@ The implementations of your domain interfaces should be in separate packages, or
 
 Dependencies include:
 
-- External data sources
-- API / transport layer (http, REST API, RPC)
-- data access layer
+- Data sources & data access (postgres, vertica, awss3, mocks, fakedb)
+- API (grpc, rest, routes, conversion)
+- Client commands (cli, cmd)
 
 You should have one package per dependency.
 
@@ -181,6 +181,11 @@ Why one package per dependency?
 - Easy substitution/replacement
 - No circular dependencies
 
+---
+
+## Example
+
+...
 
 ---
 
