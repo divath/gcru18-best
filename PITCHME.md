@@ -173,8 +173,10 @@ You should have one package per dependency.
 Why one package per dependency?
 
 - Simple testing
-- Easy substitution/replacement
+- Easy substitution/replacement/refactoring
+- Consistency
 - No circular dependencies
+- Easier to navigate
 
 ---
 
